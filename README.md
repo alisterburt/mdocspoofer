@@ -17,3 +17,7 @@ mdocspoofer
 This will start an interactive command-line interface, provide the path to the folder containing 
 the dose-fractionated micrographs and the applied electron dose per tilt image in electrons per square angstrom.
 
+To run in non-interactive mode, supply options at the command line. Details can be found using
+```
+mdocspoofer --help
+```
