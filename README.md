@@ -1,0 +1,19 @@
+# mdocspoofer
+Create dummy [SerialEM](https://bio3d.colorado.edu/SerialEM/) mdoc files for a set of tomograms collected as dose fractionated movies in Tomo 5.
+
+This serves to allow processing of cryo-ET data collected in Tomo 5 using [Warp](http://www.warpem.com/warp/#).
+
+## Installation
+```
+pip install mdocspoofer
+```
+
+## Usage
+From the command line run 
+```
+mdocspoofer
+```
+
+This will start an interactive command-line interface, provide the path to the folder containing 
+the dose-fractionated micrographs and the applied electron dose per tilt image in electrons per square angstrom.
+
