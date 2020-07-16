@@ -106,7 +106,7 @@ class MdocImage:
 
     @property
     def dose(self):
-        return float(self.regex.group(2)) * self.dose_per_image
+        return self.dose_per_image
 
     @property
     def basename(self):
