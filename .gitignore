@@ -2,3 +2,5 @@ test
 example_data
 .idea
 setup.py
+dist
+MANIFEST
