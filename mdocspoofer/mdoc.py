@@ -67,6 +67,20 @@ class Mdoc:
                   ]
         return header
 
+    @property
+    def n_mdoc_images(self):
+        return len(self.mdoc_images)
+
+    @property
+    def image_idx(self):
+        return [mdoc_image.image_idx for mdoc_image in self.mdoc_images]
+
+    @property
+    def ordered_mdoc_images(self):
+        s = sorted(zip(self.image_idx, self.mdoc_images), key=lambda x: x[0])
+        ordered_mdoc_images = [tup[1] for tup in s]
+        return ordered_mdoc_images
+
     def write(self):
         self.write_header()
         self.write_body()
@@ -78,7 +92,7 @@ class Mdoc:
 
     def write_body(self):
         with open(self.filename, 'a') as file:
-            for image in self.mdoc_images:
+            for image in self.ordered_mdoc_images:
                 for line in image.body:
                     file.write(f'{line}\n')
 
