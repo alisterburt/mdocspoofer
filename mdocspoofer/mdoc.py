@@ -171,5 +171,5 @@ class MdocImage:
 def cli(directory, dose_per_image):
     f = FramesDir(directory, dose_per_image)
     n_mdocs = len(f.mdocs)
-    click.echo(f"Done! Wrote out {n_mdocs} mdoc files for frames in '{directory}' in the 'mdoc' folder")
+    click.echo(f"Done! Wrote out {n_mdocs} fake mdoc files for frames in '{directory}' in the 'mdoc' folder")
     return
