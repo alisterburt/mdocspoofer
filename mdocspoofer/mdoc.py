@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta
 import re
 from pathlib import Path
 
@@ -127,6 +128,11 @@ class MdocImage:
         return self.regex.group(1)
 
     @property
+    def time(self) -> str:
+        time = datetime.now() + timedelta(minutes=1*self.image_idx)
+        return time.strftime('%H:%M:%S')
+
+    @property
     def body(self):
         body = [f"[ZValue = {self.image_idx}]",
                 f"TiltAngle = {self.tilt_angle}",
@@ -151,7 +157,7 @@ class MdocImage:
                 fr"SubFramePath = X:\spoof\frames\{self.image_file}",
                 "NumSubFrames = 15",
                 "FrameDosesAndNumber = 0 15",
-                "DateTime = 24-Sep-18  16:47:20",
+                f"DateTime = 24-Sep-18  {self.time}",
                 "NavigatorLabel = 37",
                 "\n"
                 ]
