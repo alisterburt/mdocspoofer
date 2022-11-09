@@ -13,7 +13,7 @@ class FramesDir:
 
     @property
     def movies(self):
-        return Path(self.directory).glob('*_fractions.mrc')
+        return Path(self.directory).glob('*_fractions.*')
 
     @property
     def mdoc_images(self):
